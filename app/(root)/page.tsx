@@ -1,7 +1,15 @@
-export default function Home() {
+import { collectionAPI } from "@/apis/collectionApi";
+import Tab from "@/features/home/components/tab";
+
+export default async function Home() {
+  const collections = await collectionAPI.getList();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-    
+    <div className="min-h-screen">
+      <div className="lg:pl-28 md:pl-8 py-2">
+        <Tab list={collections ?? []} />
+      </div>
     </div>
+
   );
 }
