@@ -1,8 +1,8 @@
-import { Collection } from "@/types/collection";
+import { Topic } from "@/types/topic";
 import PillTab from "../pill-tab";
 
 interface TabProps {
-    list: Array<Collection>
+    list: Array<Topic>
 }
 
 const Tab = ({ list }: TabProps) => {
